@@ -15,8 +15,6 @@ public class BrowserFactory {
         switch (browser) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
-                ChromeOptions options  = new ChromeOptions();
-                options.addArguments("incognito");
                 driver = new ChromeDriver();
                 break;
             case "firefox":

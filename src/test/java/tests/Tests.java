@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.WebElement;
 import pages.SmartPhonesPage;
 import pages.HomePage;
 import base.driverUtils.Driver;
@@ -22,26 +23,27 @@ public class Tests {
         homePage.clickOnCatalog();
         homePage.clickOnSmartphones();
 
-        TimeUnit.SECONDS.sleep( 3);
-        System.out.println(smartPhonesPage.getCountElements());
 
-//        smartPhonesPage.sendPrice(price);
-//        smartPhonesPage.sendDiagonal(text);
-//
-//        smartPhonesPage.clickOnXiaomiField();
-//        smartPhonesPage.clickOnSamsungCheckbox();
-//        smartPhonesPage.clickOnAppleCheckbox();
-//        smartPhonesPage.clickOnRealmeCheckbox();
-//        smartPhonesPage.clickOnBqCheckbox();
-//
-//        title = smartPhonesPage.getTitleFirstTelephone();
-//
-//        smartPhonesPage.searchFirstTelephone(title);
-//        smartPhonesPage.clickFindButton();
-//
-//        smartPhonesPage.getRatingNumber();
-//
-//        TimeUnit.SECONDS.sleep( 10);
+        smartPhonesPage.switchToGrid();
+        System.out.println(smartPhonesPage.getCountElements().size());
+
+        smartPhonesPage.sendPrice(price);
+        smartPhonesPage.sendDiagonal(text);
+
+        smartPhonesPage.clickOnXiaomiField();
+        smartPhonesPage.clickOnSamsungCheckbox();
+        smartPhonesPage.clickOnAppleCheckbox();
+        smartPhonesPage.clickOnRealmeCheckbox();
+        smartPhonesPage.clickOnBqCheckbox();
+
+        title = smartPhonesPage.getTitleFirstTelephone();
+
+        smartPhonesPage.searchFirstTelephone(title);
+        smartPhonesPage.clickFindButton();
+
+        smartPhonesPage.getRatingNumber();
+
+
 
 
 

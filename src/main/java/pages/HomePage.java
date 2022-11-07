@@ -2,16 +2,20 @@ package pages;
 
 import base.elements.Button;
 
+
 public class HomePage {
-    String buttonCatalog = "//*[@id='catalogPopupButton']";
-    String smartphones = "//*[contains(@href,'smartfony')]";
 
-    public void  clickOnCatalog(){
-       new Button(buttonCatalog).clickOnElement();
+    private Button buttonCatalog = new Button("//*[@id='catalogPopupButton']");
+    private Button smartphones = new Button("//*[contains(@href,'smartfony')]");
 
-    };
 
-    public void clickOnSmartphones(){
-        new Button(smartphones).clickOnElement();
+    public void clickOnCatalog() {
+        buttonCatalog.clickOnElement();
+    }
+
+
+
+    public void clickOnSmartphones() {
+        smartphones.clickOnElement();
     }
 }
