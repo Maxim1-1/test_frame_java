@@ -1,5 +1,6 @@
-package base;
+package base.elements.base;
 
+import base.driverUtils.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -32,7 +33,6 @@ public class BaseElement {
        WebElement element = this.findElement();
         element.click();
     }
-
 
 
 }

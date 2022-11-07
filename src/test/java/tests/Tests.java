@@ -2,7 +2,7 @@ package tests;
 
 import pages.SmartPhonesPage;
 import pages.HomePage;
-import base.Driver;
+import base.driverUtils.Driver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,17 +11,19 @@ public class Tests {
     public static void main(String[] args) throws InterruptedException {
         String text="3";
         String price ="20000";
+        String title;
 
         Driver ins = Driver.getInstance();
         ins.getDriver().get("https://market.yandex.ru/");
 
         HomePage homePage = new HomePage();
-        homePage.clickOnCatalog();
-        homePage.clickOnSmartphones();
         SmartPhonesPage smartPhonesPage = new SmartPhonesPage();
 
+        homePage.clickOnCatalog();
+        homePage.clickOnSmartphones();
+
         TimeUnit.SECONDS.sleep( 3);
-        smartPhonesPage.getCountElements();
+        System.out.println(smartPhonesPage.getCountElements());
 
 //        smartPhonesPage.sendPrice(price);
 //        smartPhonesPage.sendDiagonal(text);
@@ -31,8 +33,14 @@ public class Tests {
 //        smartPhonesPage.clickOnAppleCheckbox();
 //        smartPhonesPage.clickOnRealmeCheckbox();
 //        smartPhonesPage.clickOnBqCheckbox();
-
-
+//
+//        title = smartPhonesPage.getTitleFirstTelephone();
+//
+//        smartPhonesPage.searchFirstTelephone(title);
+//        smartPhonesPage.clickFindButton();
+//
+//        smartPhonesPage.getRatingNumber();
+//
 //        TimeUnit.SECONDS.sleep( 10);
 
 

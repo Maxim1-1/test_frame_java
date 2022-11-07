@@ -1,4 +1,4 @@
-package base;
+package base.browser;
 import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.chrome.ChromeOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
