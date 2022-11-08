@@ -1,21 +1,30 @@
 package tests;
 
-import org.openqa.selenium.WebElement;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import pages.SmartPhonesPage;
 import pages.HomePage;
+import org.junit.jupiter.api.Test;
 import base.driverUtils.Driver;
 
-import java.util.concurrent.TimeUnit;
-
 public class Tests {
+    @BeforeAll
+    static void setup(){
+        Driver ins = Driver.getInstance();
+        ins.getDriver().get("https://market.yandex.ru/");
+    }
 
-    public static void main(String[] args) throws InterruptedException {
+    @AfterAll
+    static void teardown(){
+        Driver ins = Driver.getInstance();
+        ins.getDriver().quit();
+    }
+    @Test
+      void test() {
         String text="3";
         String price ="20000";
         String title;
-
-        Driver ins = Driver.getInstance();
-        ins.getDriver().get("https://market.yandex.ru/");
 
         HomePage homePage = new HomePage();
         SmartPhonesPage smartPhonesPage = new SmartPhonesPage();
@@ -25,7 +34,7 @@ public class Tests {
 
 
         smartPhonesPage.switchToGrid();
-        System.out.println(smartPhonesPage.getCountElements().size());
+        Assertions.assertEquals(smartPhonesPage.getCountElements().size(),10);
 
         smartPhonesPage.sendPrice(price);
         smartPhonesPage.sendDiagonal(text);
@@ -43,11 +52,6 @@ public class Tests {
 
         smartPhonesPage.getRatingNumber();
 
-
-
-
-
-        ins.getDriver().quit();
-
     }
+
 }
