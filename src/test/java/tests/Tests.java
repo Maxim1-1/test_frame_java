@@ -1,12 +1,19 @@
 package tests;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
-import pages.SmartPhonesPage;
-import pages.HomePage;
 import org.junit.jupiter.api.Test;
 import base.driverUtils.Driver;
+import pages.HomePage;
+import pages.SmartPhonesPage;
+
+
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Tests {
     @BeforeAll
@@ -21,9 +28,15 @@ public class Tests {
         ins.getDriver().quit();
     }
     @Test
-      void test() {
-        String text="3";
-        String price ="20000";
+      void test() throws IOException, ParseException {
+        String path = "src/main/resources/testData/testData.json";
+        FileReader reader = new FileReader(path);
+
+        JSONParser jsonParser = new JSONParser();
+        JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
+
+        String text= (String) jsonObject.get("diagonal");
+        String price =(String) jsonObject.get("price");
         String title;
 
         HomePage homePage = new HomePage();
@@ -34,7 +47,7 @@ public class Tests {
 
 
         smartPhonesPage.switchToGrid();
-        Assertions.assertEquals(smartPhonesPage.getCountElements().size(),10);
+        Assertions.assertEquals(smartPhonesPage.getCountElements().size(),8);
 
         smartPhonesPage.sendPrice(price);
         smartPhonesPage.sendDiagonal(text);

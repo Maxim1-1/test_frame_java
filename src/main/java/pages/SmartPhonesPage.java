@@ -52,7 +52,6 @@ public class SmartPhonesPage {
 
     public List<WebElement> getCountElements() {
         List<WebElement> elements = FirstTitleTelephone.findElements();
-        System.out.println(elements);
         return  elements;
     }
 
