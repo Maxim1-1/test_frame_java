@@ -47,7 +47,7 @@ public class Tests {
 
 
         smartPhonesPage.switchToGrid();
-        Assertions.assertEquals(smartPhonesPage.getCountElements().size(),8);
+        Assertions.assertEquals(smartPhonesPage.getCountElements().size(),9);
 
         smartPhonesPage.sendPrice(price);
         smartPhonesPage.sendDiagonal(text);
