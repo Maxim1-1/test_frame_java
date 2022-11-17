@@ -6,23 +6,21 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class SmartPhonesPage {
-    private TextBox xiaomiField = new TextBox("//*[@data-filter-value-id='7701962']//*[contains(@class,'_1ZDAA')]");
-    private TextBox samsungField = new TextBox("//*[@data-filter-value-id='153061']//*[contains(@class,'_1ZDAA')]");
-    private TextBox appleField = new TextBox("//*[@data-filter-value-id='153043']//*[contains(@class,'_1ZDAA')]");
-    private TextBox realmeField = new TextBox("//*[@data-filter-value-id='16713696']//*[contains(@class,'_1ZDAA')]");
-    private TextBox bqField = new TextBox("//*[@data-filter-value-id='10556303']//*[contains(@class,'_1ZDAA')]");
+    private final TextBox xiaomiField = new TextBox("//*[@data-filter-value-id='7701962']//*[contains(@class,'_1ZDAA')]");
+    private final TextBox samsungField = new TextBox("//*[@data-filter-value-id='153061']//*[contains(@class,'_1ZDAA')]");
+    private final TextBox appleField = new TextBox("//*[@data-filter-value-id='153043']//*[contains(@class,'_1ZDAA')]");
+    private final TextBox realmeField = new TextBox("//*[@data-filter-value-id='16713696']//*[contains(@class,'_1ZDAA')]");
+    private final TextBox bqField = new TextBox("//*[@data-filter-value-id='10556303']//*[contains(@class,'_1ZDAA')]");
 
-    private TextBox diagonalField =  new TextBox("//*[@data-auto='filter-range-14805766']//input");
+    private final TextBox diagonalField =  new TextBox("//*[@data-auto='filter-range-14805766']//input");
 
-    private TextBox priceField = new  TextBox("//*[@data-auto='filter-range-glprice']//*[@data-tid='587be0c5'][last()]//input");
+    private final TextBox priceField = new  TextBox("//*[@data-auto='filter-range-glprice']//*[@data-tid='587be0c5'][last()]//input");
 
-//    private TextBox countElements = new TextBox("//*[@data-index]") ;
+    private final TextBox FirstTitleTelephone = new TextBox("//h3//span");
 
-    private TextBox FirstTitleTelephone = new TextBox("//h3//span");
+    private final TextBox searchField = new TextBox("//*[@id='header-search']");
 
-    private TextBox searchField = new TextBox("//*[@id='header-search']");
-
-    private TextBox buttonFind = new TextBox("//*[@data-r='search-button']");
+    private final TextBox buttonFind = new TextBox("//*[@data-r='search-button']");
 
     private final TextBox ratingField = new TextBox("//*[@data-auto='rating-badge-value']");
 
