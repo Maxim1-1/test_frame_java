@@ -11,16 +11,9 @@ public class Driver {
     private static String browser =  null;
 
     private static final String url = null;
-    Driver(){
 
-        driver = BrowserFactory.getBrowser(browser="chrome");
+    Driver(){};
 
-        if (driver !=  null) {
-            driver.manage().window().maximize();
-
-
-        }
-    }
     public static Driver getInstance (){
 
         if (driverInstance ==  null) {
@@ -32,6 +25,14 @@ public class Driver {
     }
 
     public WebDriver getDriver(){
+
+        if (driver !=  null) {
+            driver.manage().window().maximize();
+        }
+        else {
+            driver = BrowserFactory.getBrowser(browser="chrome");
+            return driver;
+        }
         return driver;
     }
 
